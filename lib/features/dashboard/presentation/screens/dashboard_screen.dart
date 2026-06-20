@@ -17,14 +17,17 @@ class DashboardScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'MoneyMind AI',
+          title: const Text(
+          'TrackIO',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: dashboardDataAsync.when(
         data: (data) => RefreshIndicator(
-          onRefresh: () => ref.refresh(dashboardDataProvider.future),
+          onRefresh: () async {
+            ref.invalidate(dashboardDataProvider);
+            await ref.read(dashboardDataProvider.future);
+          },
           child: ListView(
             padding: const EdgeInsets.all(16.0),
             children: [

@@ -19,7 +19,7 @@ class TransactionTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final isIncome = transaction.type == 'income';
-    final amountColor = isIncome ? Colors.green : theme.colorScheme.onSurface;
+    final amountColor = isIncome ? Colors.teal : theme.colorScheme.onSurface;
     final prefix = isIncome ? '+' : '-';
 
     return Dismissible(

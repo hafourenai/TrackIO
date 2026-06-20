@@ -170,7 +170,7 @@ class _AddEditTransactionScreenState extends ConsumerState<AddEditTransactionScr
                 ButtonSegment(
                   value: 'income',
                   label: Text('Pemasukan'),
-                  icon: Icon(Icons.arrow_upward_rounded, color: Colors.green),
+                  icon: Icon(Icons.arrow_upward_rounded, color: Colors.teal),
                 ),
               ],
               selected: {_type},

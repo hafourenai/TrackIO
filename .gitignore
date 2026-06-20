@@ -44,6 +44,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /android/app/build/
+/android/build/
 
 # Old APK files
 *.apk
+TrackIO.apk
+TrackIO-release.apk

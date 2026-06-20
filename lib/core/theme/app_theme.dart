@@ -6,10 +6,10 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: ColorConstants.primaryGreen,
+        seedColor: ColorConstants.primaryTeal,
         brightness: Brightness.light,
-        primary: ColorConstants.primaryGreen,
-        secondary: ColorConstants.secondaryGreen,
+        primary: ColorConstants.primaryTeal,
+        secondary: ColorConstants.secondaryTeal,
         surface: ColorConstants.surfaceLight,
       ),
       scaffoldBackgroundColor: ColorConstants.backgroundLight,
@@ -32,10 +32,10 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: ColorConstants.primaryGreen,
+        seedColor: ColorConstants.primaryTeal,
         brightness: Brightness.dark,
-        primary: ColorConstants.secondaryGreen,
-        secondary: ColorConstants.primaryGreen,
+        primary: ColorConstants.secondaryTeal,
+        secondary: ColorConstants.primaryTeal,
         surface: ColorConstants.surfaceDark,
       ),
       scaffoldBackgroundColor: ColorConstants.backgroundDark,

@@ -48,7 +48,7 @@ class BalanceCard extends StatelessWidget {
                   context,
                   label: 'Pemasukan',
                   amount: monthlyIncome,
-                  color: Colors.green,
+                  color: Colors.teal,
                   icon: Icons.arrow_upward_rounded,
                 ),
                 _buildSummaryItem(
@@ -62,7 +62,7 @@ class BalanceCard extends StatelessWidget {
                   context,
                   label: 'Tabungan',
                   amount: monthlySavings,
-                  color: Colors.blue,
+                  color: Colors.teal.shade300,
                   icon: Icons.savings_rounded,
                 ),
               ],

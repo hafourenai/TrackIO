@@ -45,7 +45,7 @@ class CategoryConstants {
   static Color getColor(String category) {
     switch (category.toLowerCase()) {
       case 'gaji':
-        return Colors.green;
+        return Colors.teal;
       case 'bonus':
         return Colors.amber;
       case 'freelance':

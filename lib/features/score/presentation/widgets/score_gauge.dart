@@ -13,7 +13,7 @@ class ScoreGauge extends StatelessWidget {
   Color _getStatusColor(String status) {
     switch (status) {
       case 'Sangat Baik':
-        return Colors.green;
+        return Colors.teal.shade600;
       case 'Baik':
         return Colors.teal;
       case 'Cukup':

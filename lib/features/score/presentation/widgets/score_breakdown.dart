@@ -36,7 +36,7 @@ class ScoreBreakdown extends StatelessWidget {
               label: 'Rasio Tabungan (Savings)',
               value: savingScore,
               max: 30,
-              color: Colors.blue,
+              color: Colors.teal.shade300,
             ),
             const Divider(height: 24),
             _buildComponentRow(
@@ -44,7 +44,7 @@ class ScoreBreakdown extends StatelessWidget {
               label: 'Rasio Pengeluaran (Expense)',
               value: expenseScore,
               max: 25,
-              color: Colors.green,
+              color: Colors.teal,
             ),
             const Divider(height: 24),
             _buildComponentRow(

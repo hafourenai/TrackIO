@@ -34,7 +34,7 @@ class SummarySection extends StatelessWidget {
               context,
               label: 'Pemasukan bulan ini',
               value: CurrencyFormatter.format(monthlyIncome),
-              color: Colors.green,
+              color: Colors.teal,
             ),
             const Divider(),
             _buildSummaryRow(

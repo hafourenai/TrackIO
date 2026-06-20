@@ -13,24 +13,27 @@ final transactionRepositoryProvider = Provider<TransactionRepository>((ref) {
 class TransactionRepositoryImpl implements TransactionRepository {
   final _controller = StreamController<List<Transaction>>.broadcast();
   List<Transaction> _cache = [];
-
-  TransactionRepositoryImpl() {
-    _emit();
-  }
+  bool _loaded = false;
 
   Database get _db => AppDatabase.instance;
 
-  Future<void> _emit() async {
+  Future<void> _loadFromDb() async {
+    if (_loaded) return;
     final models = await _db.query('transactions', orderBy: 'date DESC');
     _cache = models.map((m) => TransactionModel.fromMap(m).toEntity()).toList();
-    _controller.add(_cache);
+    _loaded = true;
+  }
+
+  Future<void> _emit() async {
+    await _loadFromDb();
+    if (_controller.hasListener) {
+      _controller.add(_cache);
+    }
   }
 
   @override
   Future<List<Transaction>> getAllTransactions() async {
-    if (_cache.isNotEmpty) return _cache;
-    final models = await _db.query('transactions', orderBy: 'date DESC');
-    _cache = models.map((m) => TransactionModel.fromMap(m).toEntity()).toList();
+    await _loadFromDb();
     return _cache;
   }
 
@@ -67,20 +70,24 @@ class TransactionRepositoryImpl implements TransactionRepository {
       map.remove('id');
       await _db.insert('transactions', map);
     }
-    _cache = [];
+    _loaded = false;
     _emit();
   }
 
   @override
   Future<void> deleteTransaction(int id) async {
     await _db.delete('transactions', where: 'id = ?', whereArgs: [id]);
-    _cache = [];
+    _loaded = false;
     _emit();
   }
 
   @override
-  Stream<List<Transaction>> watchTransactions() {
-    return _controller.stream;
+  Stream<List<Transaction>> watchTransactions() async* {
+    await _loadFromDb();
+    yield List.from(_cache);
+    await for (final txns in _controller.stream) {
+      yield txns;
+    }
   }
 
   void dispose() {
