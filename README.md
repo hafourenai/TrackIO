@@ -19,7 +19,6 @@
   <img src="https://img.shields.io/badge/SQLite-sqflite-003B57?logo=sqlite&logoColor=white" alt="SQLite" />
   <img src="https://img.shields.io/badge/ML%20Kit-Text%20Recognition-FF6F00?logo=google&logoColor=white" alt="ML Kit" />
   <img src="https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4?logo=googlegemini&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
 </p>
 
 ---
