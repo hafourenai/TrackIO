@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import '../providers/chat_provider.dart';
 
 class ChatBubble extends StatelessWidget {
@@ -36,15 +37,67 @@ class ChatBubble extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SelectableText(
-              message.text,
-              style: TextStyle(
-                color: isUser
-                    ? theme.colorScheme.onPrimary
-                    : theme.colorScheme.onSurface,
-                fontSize: 14,
+            if (isUser)
+              SelectableText(
+                message.text,
+                style: TextStyle(
+                  color: theme.colorScheme.onPrimary,
+                  fontSize: 14,
+                ),
+              )
+            else
+              MarkdownBody(
+                selectable: true,
+                data: message.text,
+                styleSheet: MarkdownStyleSheet(
+                  p: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    fontSize: 14,
+                  ),
+                  strong: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  h1: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  h2: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  h3: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  code: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                    backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                    fontSize: 13,
+                  ),
+                  codeblockDecoration: BoxDecoration(
+                    color: theme.colorScheme.surfaceContainerHighest,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  listBullet: TextStyle(
+                    color: theme.colorScheme.onSurface,
+                  ),
+                  blockquoteDecoration: BoxDecoration(
+                    border: Border(
+                      left: BorderSide(
+                        color: theme.colorScheme.primary,
+                        width: 3,
+                      ),
+                    ),
+                  ),
+                  a: TextStyle(
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
               ),
-            ),
           ],
         ),
       ),

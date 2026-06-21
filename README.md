@@ -1,8 +1,10 @@
-# TrackIO
+<h1 align="center">TrackIO</h1>
 
 <p align="center">
   <img src="docs/assets/logo.png" alt="TrackIO Logo" width="120" />
 </p>
+
+
 
 <p align="center">
   <strong>Personal Finance Manager with AI Assistant</strong>
@@ -62,8 +64,8 @@ TrackIO is a mobile-first personal finance management application built with Flu
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/trackio.git
-cd trackio
+git clone https://github.com/hafourenai/trackio.git
+cd TrackI
 
 # Install dependencies
 flutter pub get
@@ -134,16 +136,15 @@ TrackIO follows **Clean Architecture** with three layers:
 
 ## Screenshots
 
-*(Add screenshots here)*
-
----
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+<p align="center">
+  <img src="docs/assets/SS.png" alt="TrackIO Screenshot" width="270" />
+</p>
 
 ---
 
 ## Contact
 
-Project Link: [https://github.com/yourusername/trackio](https://github.com/yourusername/trackio)
+Project Link: [https://github.com/hafourenai/trackio](https://github.com/hafourenai/trackio)
+
+---
+*Gua udah tau kok. But I Still Love U*

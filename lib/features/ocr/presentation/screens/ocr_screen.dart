@@ -106,11 +106,15 @@ class OcrScreen extends ConsumerWidget {
                   ] else ...[
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: Image.file(
-                        state.image!,
-                        height: 200,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: MediaQuery.of(context).size.height * 0.4,
+                        ),
+                        child: Image.file(
+                          state.image!,
+                          width: double.infinity,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 16),

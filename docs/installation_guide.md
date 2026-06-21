@@ -16,7 +16,7 @@
 ## Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/trackio.git
+git clone https://github.com/hafourenai/TrackIO.git
 cd trackio
 ```
 
