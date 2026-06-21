@@ -64,8 +64,8 @@ TrackIO is a mobile-first personal finance management application built with Flu
 
 ```bash
 # Clone the repository
-git clone https://github.com/hafourenai/trackio.git
-cd TrackI
+git clone https://github.com/hafourenai/TrackIO.git
+cd TrackIO
 
 # Install dependencies
 flutter pub get
@@ -144,7 +144,7 @@ TrackIO follows **Clean Architecture** with three layers:
 
 ## Contact
 
-Project Link: [https://github.com/hafourenai/trackio](https://github.com/hafourenai/trackio)
+Project Link: [https://github.com/hafourenai/TrackIO](https://github.com/hafourenai/TrackIO)
 
 ---
 *Gua udah tau kok. But I Still Love U*

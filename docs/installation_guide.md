@@ -17,7 +17,7 @@
 
 ```bash
 git clone https://github.com/hafourenai/TrackIO.git
-cd trackio
+cd TrackIO
 ```
 
 ---
